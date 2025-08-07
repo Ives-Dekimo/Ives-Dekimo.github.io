@@ -70,7 +70,7 @@ def do_filtered(employees, current_year, weeks_this_year, first_in_cycle_week_nu
 
         idx += 1
 
-    with open(f"joske_{filter or 'all'}.ics", "w") as f:
+    with open(f"calendars/joske_{filter or 'all'}.ics", "w") as f:
         f.writelines(calendar)
 
 do_filtered(employees, current_year, weeks_this_year, first_in_cycle_week_number, idx, calendar, get_monday_of_week, weeks_next_year, None)
