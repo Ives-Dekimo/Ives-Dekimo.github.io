@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta
 
 from ics import Calendar, Event
+import pytz
 
 path = "\\\\turnhoutnas.dekimo.com\\DEKIMOBACKUP\\scripts\\joske\\"
 
@@ -28,8 +29,11 @@ idx = 0
 
 def get_monday_of_week(year, week):
     dt = datetime.fromisocalendar(year, week, 1)
+    dt_utc = dt.replace(tzinfo=pytz.utc)
     # to local timezone
-    return dt.replace(hour=0, minute=0, second=0, microsecond=0)
+    local_tz = pytz.timezone('Europe/Brussels')  # Replace with your local timezone
+    dt_local = dt_utc.astimezone(local_tz)
+    return dt_local
 
 weeks_next_year = 53 if (current_year % 4 == 0 and current_year % 100 != 0) or (current_year % 400 == 0) else 52
 
