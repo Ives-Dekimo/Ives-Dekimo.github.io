@@ -27,7 +27,9 @@ print(f"Current week number: {current_week_number}")
 idx = 0 
 
 def get_monday_of_week(year, week):
-    return datetime.fromisocalendar(year, week, 1)
+    dt = datetime.fromisocalendar(year, week, 1)
+    # to local timezone
+    return dt.replace(hour=0, minute=0, second=0, microsecond=0)
 
 weeks_next_year = 53 if (current_year % 4 == 0 and current_year % 100 != 0) or (current_year % 400 == 0) else 52
 
