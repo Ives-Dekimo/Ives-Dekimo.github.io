@@ -59,7 +59,7 @@ def do_filtered(employees, current_year, weeks_this_year, first_in_cycle_week_nu
             e.name = f"Joske: {joske}"
             e.begin = start
             e.end = end
-            e.extra.append(ContentLine(name="X-MICROSOFT-CDO-ALLDAYEVENT", value="TRUE"))
+        #    e.extra.append(ContentLine(name="X-MICROSOFT-CDO-ALLDAYEVENT", value="TRUE"))
             e.extra.append(ContentLine(name="X-MICROSOFT-CDO-BUSYSTATUS", value="FREE"))
             calendar.events.add(e)
 
@@ -79,7 +79,7 @@ def do_filtered(employees, current_year, weeks_this_year, first_in_cycle_week_nu
             e.name = f"Joske: {joske}"
             e.begin = start
             e.end = end
-            e.extra.append(ContentLine(name="X-MICROSOFT-CDO-ALLDAYEVENT", value="TRUE"))
+          #  e.extra.append(ContentLine(name="X-MICROSOFT-CDO-ALLDAYEVENT", value="TRUE"))
             e.extra.append(ContentLine(name="X-MICROSOFT-CDO-BUSYSTATUS", value="FREE"))
             calendar.events.add(e)
 
